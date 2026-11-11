@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri - Felik Tanadi</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            max-width: 800px;
+            width: 100%;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .profile-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .profile-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .badge {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Section Layout */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 28px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .info-card {
+            background-color: #f8fafc;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .info-card .value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.08);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+            color: #ffffff;
+            padding: 20px 10px 8px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Foto Profil Utama -->
+        <header class="profile-header">
+            <div class="profile-img-wrapper">
+                <img src="35916.jpg" alt="Foto Felik Tanadi" class="profile-img">
+            </div>
+            <h1>Felik Tanadi</h1>
+            <p>Pelajar di SMKN 1 RDK</p>
+            
+            <div class="badges">
+                <span class="badge">📸 Fotografi</span>
+                <span class="badge">🏀 Olahraga</span>
+                <span class="badge">🎵 Musik</span>
+            </div>
+        </header>
+
+        <!-- Informasi Biodata -->
+        <section>
+            <h2 class="section-title">Informasi Pribadi</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="label">Asal</div>
+                    <div class="value">Karawang, Rengasdengklok</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Tanggal Lahir</div>
+                    <div class="value">13 November 2010</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Status</div>
+                    <div class="value">Pelajar</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Sekolah</div>
+                    <div class="value">SMKN 1 RDK</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Hobi</div>
+                    <div class="value">Fotografi, Olahraga, Musik</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Kepribadian</div>
+                    <div class="value">Introvert</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Kegiatan & Hobi -->
+        <section>
+            <h2 class="section-title">Galeri Foto & Kegiatan</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="35918.png" alt="Basket" class="gallery-img">
+                    <div class="gallery-caption">Olahraga Basket</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="35922.png" alt="Main Basket" class="gallery-img">
+                    <div class="gallery-caption">Aksi Basket</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="30709.jpg" alt="Kamera DSLR" class="gallery-img">
+                    <div class="gallery-caption">Peralatan Fotografi</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="47650.jpg" alt="Lensa Kamera" class="gallery-img">
+                    <div class="gallery-caption">Lensa Tele DSLR</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="62607.jpg" alt="Bermain Gitar" class="gallery-img">
+                    <div class="gallery-caption">Bermain Gitar</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="47645.jpg" alt="Stick Drum" class="gallery-img">
+                    <div class="gallery-caption">Latihan Drum</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="104746.jpg" alt="Set Drum" class="gallery-img">
+                    <div class="gallery-caption">Alat Musik Drum</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="49102.jpg" alt="Bela Diri" class="gallery-img">
+                    <div class="gallery-caption">Kegiatan Bela Diri</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="5944.jpg" alt="Foto Selfie Masker" class="gallery-img">
+                    <div class="gallery-caption">Foto Diri</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
